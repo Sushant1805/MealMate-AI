@@ -6,7 +6,7 @@ import ButtonBlue500 from "./ButtonBlue500";
 const Landing = () => {
   return (
     <>
-      <div className="main flex gap-10">
+      <div className="main flex gap-10 h-screen">
       <div className=" mt-50 ml-35 flex flex-col gap-5">
       <p className="text-white text-5xl font-bold flex flex-col">
         <span>Take control of your health with </span>
