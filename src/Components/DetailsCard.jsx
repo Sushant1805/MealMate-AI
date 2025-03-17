@@ -7,7 +7,7 @@ const DetailsCard = ({Img,title,headline,Description}) => {
             <Img className='w-15 h-15 text-[#0C0D4D]'/>
             <h1 className='text-xl font-bold text-[#0C0D4D] '>{title}</h1>
             <p className='text-md font-semibold '>{headline}</p>
-            <p className='text-center'>{Description}</p>
+            <p className='text-center text-sm'>{Description}</p>
 
         </div>
     </>
