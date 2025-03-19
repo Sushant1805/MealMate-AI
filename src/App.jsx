@@ -6,6 +6,7 @@ import DetailsPage from './Pages/DetailsPage'
 import GetStartedPage from './Pages/GetStartedPage'
 import Footer from './Components/Footer'
 import Login from './Pages/Login'
+import Register from './Pages/Register'
 const App = () => {
 
   return (
@@ -15,7 +16,8 @@ const App = () => {
     <DetailsPage/>
     <GetStartedPage/>
     <Footer/> */}
-    <Login/>
+    {/* <Login/> */}
+    <Register/>
     </>
   )
 }
