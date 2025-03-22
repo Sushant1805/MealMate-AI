@@ -7,6 +7,8 @@ import GetStartedPage from './Pages/GetStartedPage'
 import Footer from './Components/Footer'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
+import PersonalisedDiet from './Pages/PersonalisedDiet'
+
 const App = () => {
 
   return (
@@ -17,7 +19,8 @@ const App = () => {
     <GetStartedPage/>
     <Footer/> */}
     {/* <Login/> */}
-    <Register/>
+    {/* <Register/> */}
+    <PersonalisedDiet/>
     </>
   )
 }

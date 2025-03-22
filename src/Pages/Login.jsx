@@ -4,7 +4,7 @@ import MicrosoftBtn from '../Buttons/MicrosoftBtn'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  
   function onChangeHandler(e){
     setEmail(e.target.value);
   }
