@@ -41,7 +41,7 @@ const PersonalisedDiet = () => {
     };
     
 
-    const genAI = new GoogleGenerativeAI("AIzaSyA1Ac0TH_oYLNib9x7HMW0ioevXgcZWumg");
+    const genAI = new GoogleGenerativeAI("");
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     
     async function getData(prompt){
