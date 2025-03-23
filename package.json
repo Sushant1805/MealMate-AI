@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@brightlayer-ui/react-progress-icons": "^2.1.1",
     "@google/generative-ai": "^0.24.0",
     "@tailwindcss/vite": "^4.0.14",
     "dotenv": "^16.4.7",

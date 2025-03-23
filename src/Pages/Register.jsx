@@ -39,9 +39,9 @@ const Register = () => {
                 <p className='font-medium mt-5'>Name</p>
                 <input onChange={(e)=>{setName(e.target.value)}} value={name} className=' focus:outline focus:outline-sky-900 focus:border-sky-500 border-1 border-gray-200  h-10 rounded-md p-5 text-center' type="text" name="" id="" placeholder='Enter your name'/>
                 <p className='font-medium'>Email Address</p>
-                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} className=' focus:outline focus:outline-sky-900 focus:border-sky-500 border-1 border-gray-200 border-1 border-gray-200 h-10 rounded-md p-5 text-center' type="text" name="" id="" placeholder='Enter your email address'/>
+                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} className=' focus:outline focus:outline-sky-900 focus:border-sky-500 border-1 border-gray-200 h-10 rounded-md p-5 text-center' type="text" name="" id="" placeholder='Enter your email address'/>
                 <p className='font-medium'>Password</p>
-                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} className=' focus:outline focus:outline-sky-900 focus:border-sky-500 border-1 border-gray-200 focus:border-sky-500 display-block border-1 border-gray-200 h-10 rounded-md p-5 text-center' type="password" id="" placeholder='Enter your password'/>
+                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} className=' focus:outline focus:outline-sky-900  border-1  focus:border-sky-500 display-block  border-gray-200 h-10 rounded-md p-5 text-center' type="password" id="" placeholder='Enter your password'/>
                 <div className='flex gap-2 mt-2 '>
                   <input className='' type="checkbox" name="" id=""/> 
                   <p className='text-gray-700 text-sm'>

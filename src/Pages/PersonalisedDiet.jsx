@@ -1,8 +1,11 @@
 import { useState } from "react";
+import dotenv from "dotenv"
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ButtonBlue500 from "../Components/ButtonBlue500";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+
+
 const PersonalisedDiet = () => {
     const [formData, setFormData] = useState({
         goal: "",
