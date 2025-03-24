@@ -21,8 +21,8 @@ const App = () => {
     <Footer/> */}
     {/* <Login/> */}
     {/* <Register/> */}
-    {/* <PersonalisedDiet/> */}
-    <DietPage/>
+    <PersonalisedDiet/>
+    {/* <DietPage/> */}
     </>
   )
 }

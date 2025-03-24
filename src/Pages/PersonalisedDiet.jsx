@@ -7,6 +7,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 const PersonalisedDiet = () => {
+    const [meals, setmeals] = useState("")
     const [formData, setFormData] = useState({
         goal: "",
         preference: "",
@@ -18,27 +19,27 @@ const PersonalisedDiet = () => {
  
     const generateDietPrompt = (formData) => {
         const { goal, preference, workoutFrequency, age, height, weight } = formData;
-        
-        // Start building the prompt
-        let prompt = `Suggest a personalized diet plan for a person with the following details:\n\n`;
     
-        // Include the goal
+        let prompt = `Generate a personalized diet plan for a person with the following details:\n\n`;
+    
         prompt += `Goal: ${goal.replace('-', ' ').toUpperCase()}\n`;
-    
-        // Include the preference (vegetarian, non-vegetarian, vegan, keto)
         prompt += `Dietary Preference: ${preference.charAt(0).toUpperCase() + preference.slice(1)}\n`;
-    
-        // Include the workout frequency
         prompt += `Workout Frequency: ${workoutFrequency.replace(/-/g, ' ').toUpperCase()}\n`;
+        prompt += `Age: ${age} years\nHeight: ${height} cm\nWeight: ${weight} kg\n\n`;
     
-        // Include personal information (age, height, weight)
-        prompt += `Age: ${age} years\nHeight: ${height} cm\nWeight: ${weight} kg\n`;
+        prompt += `Provide the diet plan in the following JSON format:\n\n`;
+        prompt += `const meals = [\n`;
+        prompt += `    { time: "Breakfast", title1: "Food Item 1", quantity1: "Amount", title2: "Food Item 2", quantity2: "Amount" },\n`;
+        prompt += `    { time: "Lunch", title1: "Food Item 1", quantity1: "Amount", title2: "Food Item 2", quantity2: "Amount" },\n`;
+        prompt += `    { time: "Snack", title1: "Food Item 1", quantity1: "Amount", title2: "Food Item 2", quantity2: "Amount" },\n`;
+        prompt += `    { time: "Dinner", title1: "Food Item 1", quantity1: "Amount", title2: "Food Item 2", quantity2: "Amount" }\n`;
+        prompt += `];\n\n`;
     
-        // Ask for the diet suggestion based on the details
-        prompt += `Based on the information above, suggest a personalized diet plan that aligns with their goal, preference, and activity level. The diet should also consider their age, height, and weight.`;
+        prompt += `Ensure the food choices align with the person's goal, dietary preference, and activity level.`;
     
         return prompt;
     };
+    
     
 
     const genAI = new GoogleGenerativeAI("");
@@ -46,7 +47,8 @@ const PersonalisedDiet = () => {
     
     async function getData(prompt){
         const result = await model.generateContent(prompt);
-        console.log(result.response.text());
+        setmeals(result.response.text());
+        console.log(meals)
     }
     const handleChange = (e) => {
         const { name, value } = e.target;
