@@ -19,8 +19,8 @@ const Landing = () => {
      
     </div>
     
-    <div>
-      <img src="/src/Components/LandingImage.png" alt="" className="mt-20 h-130 w-130" />
+    <div className="flex flex-col items-center justify-center">
+      <img src="/src/Components/LandingImage.png" alt="" className="h-130 w-140" />
     </div>
       </div>
     </>

@@ -42,13 +42,13 @@ const PersonalisedDiet = () => {
     
     
 
-    const genAI = new GoogleGenerativeAI("");
+    const genAI = new GoogleGenerativeAI("AIzaSyA1Ac0TH_oYLNib9x7HMW0ioevXgcZWumg");
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     
     async function getData(prompt){
         const result = await model.generateContent(prompt);
-        setmeals(result.response.text());
-        console.log(meals)
+        console.log(result.response.text());
+        // console.log(meals)
     }
     const handleChange = (e) => {
         const { name, value } = e.target;
