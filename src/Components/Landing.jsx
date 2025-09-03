@@ -7,14 +7,13 @@ const Landing = () => {
   return (
     <>
       <div className="main flex gap-10 h-screen">
-      <div className=" mt-50 ml-35 flex flex-col gap-5">
+      <div className=" mt-20 ml-35 flex flex-col gap-5">
       <p className="text-white text-5xl font-bold flex flex-col">
         <span>Take control of your health with </span>
         <span className="text-blue-500">AI-powered, personalized</span>
         <span>nutrition plans.</span> 
       </p>
-      <p className="text-xl font-normal  text-white">SmartEats: Your personalized guide to a healthier lifestyle through <br/>
-      tailored diet plans and expert nutritional advices.</p>
+      <p className="text-xl font-normal  text-white">SmartEats: Your personalized guide to a healthier lifestyle <br/> through tailored diet plans and expert nutritional advices.</p>
      <ButtonBlue500 title="Try for Free!"/>
      
     </div>

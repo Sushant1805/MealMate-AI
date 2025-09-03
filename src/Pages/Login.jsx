@@ -1,22 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import MicrosoftBtn from "../Buttons/MicrosoftBtn";
-
-// Firebase Configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAT69wmPHm9tZ3xBWhpvAVO5hRJsQ-WSC0",
-  authDomain: "smarteats-bc8c9.firebaseapp.com",
-  projectId: "smarteats-bc8c9",
-  storageBucket: "smarteats-bc8c9.appspot.com",
-  messagingSenderId: "915448268413",
-  appId: "1:915448268413:web:569c30db72dbd90b739314",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,22 +8,21 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
+  // Submit Handler (Custom login logic)
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/personalised-diet"); // Redirect to PersonalisedDiet page on successful login
-    } catch (error) {
-      setError(error.message);
-    }
+    // TODO: Implement custom authentication logic here
+    // For now, just redirect for demonstration
+    setError("");
+    navigate("/personalised-diet");
   };
 
   return (
     <>
-      <div className="flex w-screen h-screen">
-        <div className="w-1/2 px-50 py-20">
-          <form onSubmit={handleLogin}>
-            <div className="h-170 w-100 flex flex-col gap-3 p-5">
+      <div className="flex w-screen h-screen overflow-hidden">
+        <div className="w-1/2 px-20 py-20 flex flex-col justify-start h-screen">
+          <form onSubmit={handleLogin} className="w-full">
+            <div className="w-100 flex flex-col gap-3 p-5">
               <h1 className="text-3xl font-bold text-[#0C0D4D]">
                 Sign In to your account
               </h1>
@@ -91,18 +74,16 @@ const Login = () => {
                   Create an Account
                 </p>
               </div>
-
-              <p className="text-center">or</p>
-              <MicrosoftBtn />
+             
             </div>
           </form>
         </div>
 
-        <div className="w-1/2 bg-[#0C0D4D] text-white text-center">
+        <div className="w-1/2 bg-[#0C0D4D] text-white text-center flex flex-col justify-start h-screen">
           <div className="flex flex-col">
-            <img className="w-120 h-120 ml-40 mt-20" src="./login-img2.svg" alt="" />
+            <img className="w-120 h-120 ml-20 mt-5" src="./login-img2.svg" alt="" />
           </div>
-          <div className="mt-10">
+          <div>
             <h1 className="font-semibold">Join the Future of your health journey.</h1>
             <p>Simplify, personalize, and thrive with our tailored nutrition platform.</p>
           </div>

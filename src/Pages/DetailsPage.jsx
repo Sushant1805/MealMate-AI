@@ -7,7 +7,7 @@ const DetailsPage = () => {
     
   return (
     <>
-    <div className='flex flex-col bg-white items-center justify-center gap-15 p-10 h-screen'>
+    <div className='flex flex-col bg-white items-center justify-center gap-15 p-10 h-full'>
     <h1 className='text-[#0C0D4D] text-4xl font-bold mt-10'>Why MealMate?</h1>
     <p className='font-semibold text-center w-250'>At MealMate, we make healthy eating simple. Our platform offers personalized meal plans based on your unique goals,
 whether it’s weight loss, muscle gain, or maintaining balance.With tailored suggestions, nutritional insights, and progress tracking,

@@ -12,9 +12,11 @@
   "dependencies": {
     "@brightlayer-ui/react-progress-icons": "^2.1.1",
     "@google/generative-ai": "^0.24.0",
+    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.0.14",
     "dotenv": "^16.4.7",
     "flowbite": "^3.1.2",
+    "lenis": "^1.3.11",
     "pagedone": "^1.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

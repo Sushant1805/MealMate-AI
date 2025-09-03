@@ -1,22 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import MicrosoftBtn from "../Buttons/MicrosoftBtn";
-
-// ✅ Firebase Configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAT69wmPHm9tZ3xBWhpvAVO5hRJsQ-WSC0",
-  authDomain: "smarteats-bc8c9.firebaseapp.com",
-  projectId: "smarteats-bc8c9",
-  storageBucket: "smarteats-bc8c9.appspot.com",
-  messagingSenderId: "915448268413",
-  appId: "1:915448268413:web:569c30db72dbd90b739314",
-};
-
-// ✅ Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
 const Register = () => {
   const navigate = useNavigate();
@@ -24,35 +8,25 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // ✅ Submit Handler (Handles Firebase Signup)
-  const SubmitHandler = async (e) => {
+  // Submit Handler (Custom signup logic)
+  const SubmitHandler = (e) => {
     e.preventDefault();
     if (!email || !password) {
       alert("Please enter both email and password.");
       return;
     }
-
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      alert("Account created successfully!");
-      console.log("User:", userCredential.user);
-      navigate("/login"); // Redirect to login after successful signup
-    } catch (error) {
-      alert(`Error: ${error.message}`);
-    }
-
-    // Reset form fields
-    setName("");
-    setEmail("");
-    setPassword("");
+    // TODO: Implement custom signup logic here
+    // For now, just redirect for demonstration
+    alert("Account created successfully!");
+    navigate("/login");
   };
 
   return (
-    <div className="flex w-screen h-screen">
+    <div className="flex w-screen h-screen overflow-hidden">
       {/* Left Side */}
-      <div className="w-1/2 bg-[#0C0D4D] text-white text-center">
+      <div className="w-1/2 bg-[#0C0D4D] text-white text-center flex flex-col justify-start h-screen">
         <div className="flex flex-col">
-          <img className="w-100 h-100 ml-40 mt-40" src="./sign-up.svg" alt="Signup Illustration" />
+          <img className="w-100 h-100 ml-15 mt-15" src="./sign-up.svg" alt="Signup Illustration" />
         </div>
         <div className="mt-10">
           <h1 className="font-semibold">Join the Future of your health journey.</h1>
@@ -61,7 +35,7 @@ const Register = () => {
       </div>
 
       {/* Right Side */}
-      <div className="w-1/2 px-50 py-30">
+      <div className="w-1/2 px-30 py-10 flex flex-col justify-start h-screen">
         <form onSubmit={SubmitHandler}>
           <div className="w-100 flex flex-col gap-3">
             <h1 className="text-3xl font-bold text-[#0C0D4D]">Create your account</h1>
